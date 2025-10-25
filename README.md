@@ -10,7 +10,7 @@ Powered by **Gemini-Pro-Flash-2.5**, Glitchbot delivers fast, intelligent, and c
 - [Features](#-features)  
 - [Screenshots](#-screenshots)  
 - [Tech Stack](#-tech-stack)  
-- [Installation](#-installation)  
+- [Installation](#installation)  
 ---
 
 ## 📘 About  
