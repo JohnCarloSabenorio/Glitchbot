@@ -61,7 +61,7 @@ Glitchbot isn’t just an assistant — it’s also a **virtual friend** who lis
 
 ---
 
-## ⚙️ Installation  
+## Installation  
 
 Run the project locally in a few easy steps:
 
