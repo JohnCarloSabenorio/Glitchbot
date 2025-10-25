@@ -1,7 +1,7 @@
 {
-  "devDependencies": {
-    "vite": "^6.3.6"
-  },
+  "name": "glitchbot",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,5 +9,11 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1"
+  },
+  "devDependencies": {
+    "vite": "^6.3.6"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
