@@ -14,6 +14,13 @@
   src: url("./fonts/Inter_Regular.ttf");
 }
 
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -25,21 +32,20 @@ html,
 body {
   width: 100%;
   height: 100%;
-}
-body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(107, 93, 76, 0.5)),
-    url("./images/p3r_bg.jpeg");
-  background-position: center;
+    url("./images/chatbot-bg.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow-x: hidden;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .chatbot-container {
   width: 70%;
   max-width: 900px;
-  min-width: 500px;
   height: 800px;
   margin: auto;
   position: absolute;
@@ -54,17 +60,25 @@ body {
 }
 
 .chatbot-name {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 203, 91, 0.8),
-    rgb(255, 203, 91)
+  background: rgba(
+    151,
+    38,
+    138,
+    0.8
   ); /* Subtle gradient from a lighter shade */
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  font-size: 3rem;
   border-bottom: 2px solid black;
   text-shadow: -1px -1px 0 white, /* Top-left shadow */ 1px -1px 0 white,
     /* Top-right shadow */ -1px 1px 0 white,
     /* Bottom-left shadow */ 1px 1px 0 white; /* Bottom-right shadow */
+}
+
+.chatbot-name h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
 }
 
 .chat-container {
@@ -75,26 +89,42 @@ body {
   overflow-y: scroll;
 }
 
-.prompts-container {
-  width: 100%;
-  position: absolute;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  gap: 4rem;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1rem;
+@keyframes skeleton-loading {
+  0% {
+    background: rgb(237, 170, 181);
+  }
+  50% {
+    background: rgb(246, 192, 201);
+  }
+  100% {
+    background: rgb(253, 213, 220);
+  }
 }
 
+.prompts-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 3em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
 .chat-prompt {
-  background: rgb(247, 224, 175);
+  background: rgb(253, 213, 220);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
   padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-radius: 1rem;
   cursor: pointer;
   text-align: center;
@@ -117,7 +147,7 @@ body {
 }
 
 .chat-container::-webkit-scrollbar-thumb:hover {
-  background: rgb(255, 203, 91); /* Thumb color on hover */
+  background: rgb(250, 197, 206);
 }
 
 .chat-container::-webkit-scrollbar-button {
@@ -125,10 +155,12 @@ body {
 }
 
 .typing-container {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 203, 91, 0.8),
-    rgb(255, 203, 91)
+  display: flex;
+  background: rgba(
+    151,
+    38,
+    138,
+    0.8
   ); /* Subtle gradient from a lighter shade */
   width: 100%;
   align-items: center;
@@ -146,26 +178,25 @@ body {
 
 .typing-content {
   display: flex;
-  background: white;
   width: 100%;
-  padding-inline: 0.5rem;
   border-radius: 0.5rem;
 }
 #chat-input {
   width: 100%;
-  resize: none;
   border: none;
   background: white;
   outline: none;
-  padding-top: 1rem;
+  padding: 1rem;
   font-size: 1.2rem;
   margin-left: 1rem;
+  border-radius: 5px;
 }
 
 #send-btn {
   padding: 0.5rem;
   font-size: 2rem;
   cursor: pointer;
+  color: pink;
 }
 
 .chat-content,
@@ -202,10 +233,9 @@ body {
   display: inline-block;
 }
 .response-text {
-  background: rgb(247, 224, 175);
+  background: rgb(253, 213, 220);
   color: black;
   display: inline-block;
-  /* max-width: 70%; */
   overflow-wrap: break-word;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -216,10 +246,10 @@ body {
 }
 
 .user-text {
-  background: rgb(140, 226, 252);
+  background: white;
   color: black;
   display: block;
-  /* max-width: 70%; */
+  max-width: 700px;
   overflow-wrap: break-word;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -250,8 +280,6 @@ li {
 @media (max-width: 800px) {
   .chatbot-container {
     padding: 0;
-    position: static;
-    transform: none;
     margin: 0;
     width: 100%;
     height: 100%;
