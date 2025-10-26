@@ -72,5 +72,8 @@ git clone https://github.com/your-username/glitchbot.git
 # Navigate into the project folder
 cd glitchbot
 
+# Install packages
+npm i
+
 # Open in your browser
-start index.html
+npm run dev
