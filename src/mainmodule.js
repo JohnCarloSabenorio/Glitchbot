@@ -46,7 +46,6 @@ export default async function getSamplePrompts() {
   const promptArr = JSON.parse(response);
 
   // Reduced logging for performance
-  console.log(promptArr);
   promptArr.forEach((prompt, index) => {
     const promptElement = document.getElementById(`prompt-${index + 1}`);
     if (promptElement) {

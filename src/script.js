@@ -53,7 +53,6 @@ const getChatResponse = async (userText) => {
 
   try {
     const result = await model.generateContent(userText); // Use the provided userText
-    console.log("Gemini API Response: ");
     const response = await result.response.text();
     pEle.textContent = response.trim();
   } catch (error) {
